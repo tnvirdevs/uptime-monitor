@@ -1,0 +1,11 @@
+uptime-monitor.zip
+*.log
+*.bak
+*.tmp
+*.sql.gz
+*.sql.zip
+.env
+.DS_Store
+Thumbs.db
+/storage/
+/tmp/

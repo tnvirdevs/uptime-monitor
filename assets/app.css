@@ -1,0 +1,220 @@
+:root {
+    --bg: #f4f7fb;
+    --panel: #ffffff;
+    --text: #1b2533;
+    --muted: #6c7788;
+    --line: #dde5ef;
+    --sidebar: #111827;
+    --accent: #0d6efd;
+}
+
+[data-theme="dark"] {
+    --bg: #101418;
+    --panel: #171d24;
+    --text: #e8eef6;
+    --muted: #9ba7b5;
+    --line: #28313d;
+    --sidebar: #080d14;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: var(--sidebar);
+    color: #fff;
+    padding: 22px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    margin-bottom: 26px;
+}
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: #0d6efd;
+    font-size: 13px;
+}
+
+.brand-logo,
+.login-logo {
+    max-width: 42px;
+    max-height: 42px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.sidebar nav {
+    display: grid;
+    gap: 6px;
+}
+
+.sidebar a:not(.brand) {
+    color: #c9d4e2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, .1);
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .1);
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+.app-main {
+    flex: 1;
+    padding: 24px;
+    min-width: 0;
+}
+
+.auth-main {
+    display: grid;
+    place-items: center;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.topbar h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.topbar span,
+.muted {
+    color: var(--muted);
+}
+
+.topbar-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-pill {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 12px;
+}
+
+.card,
+.modal-content {
+    background: var(--panel);
+    color: var(--text);
+    border-color: var(--line);
+    border-radius: 8px;
+}
+
+.metric {
+    min-height: 118px;
+}
+
+.metric .value {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text);
+    --bs-table-border-color: var(--line);
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.online { background: #198754; }
+.offline { background: #dc3545; }
+.paused { background: #6c757d; }
+
+.auth-card {
+    width: min(420px, calc(100vw - 32px));
+}
+
+.chart-box {
+    height: 290px;
+}
+
+.chart-box canvas {
+    max-height: 260px;
+}
+
+.badge-status {
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .app-shell {
+        display: block;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+        width: 100%;
+    }
+
+    .sidebar nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
